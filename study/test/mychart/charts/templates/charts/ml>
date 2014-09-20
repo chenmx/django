@@ -1,0 +1,37 @@
+<html>
+<head></head>
+<body>
+<div id="container" style="height: 300px"></div>
+</body>
+<script type="text/javascript">
+$(function () {
+$('#container').highcharts({
+chart: {
+type: 'column'
+},
+title: {
+text: 'ip统计'
+},
+xAxis: {
+categories: {{ip_time}}  }, //ip_time数据为：[20140501, 20140502, 20140503, 20140504, 20140505]
+yAxis: {
+min: 0,
+title: {
+text: 'ip数量 (ip)'
+}
+},
+plotOptions: {
+column: {
+pointPadding: 0.2,
+borderWidth: 0
+}
+},
+series: [{
+name: 'ip',
+data: {{ip_conut}}  //ip_conut数据为：[853, 821, 829, 1048, 1014]
+
+}]
+});
+});
+</script>
+</html>
